@@ -5,12 +5,12 @@
 - [Sunbeam](https://github.com/pomdtr/sunbeam)
 - [Deno](https://deno.land/)
 
-The DENO_DEPLOY_TOKEN environment variable must be set.
+The `DENO_DEPLOY_TOKEN` environment variable must be set.
 
 ## Installation
 
 ```bash
-sunbeam extension install deno https://github.com/pomdtr/sunbeam-deno
+sunbeam extension install deno https://github.com/pomdtr/sunbeam-deno-deploy
 ```
 
 ## Usage
