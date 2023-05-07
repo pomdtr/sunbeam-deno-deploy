@@ -1,9 +1,11 @@
 import * as sunbeam from "https://deno.land/x/sunbeam@v1.0.0-rc.1/index.d.ts";
 import * as dotenv from "https://deno.land/std@0.186.0/dotenv/mod.ts";
+import * as path from "https://deno.land/std@0.186.0/path/mod.ts";
 import { parse } from "https://deno.land/std@0.186.0/flags/mod.ts";
 import { formatDistanceToNow } from "npm:date-fns";
 
-const root = Deno.env.get("SUNBEAM_EXTENSION_BIN") || "./sunbeam-extension";
+const dirname = decodeURI(new URL(".", import.meta.url).pathname);
+const entrypoint = path.join(dirname, "sunbeam-extension");
 
 async function loadToken() {
   if (Deno.env.get("DENO_DEPLOY_TOKEN")) {
@@ -70,7 +72,7 @@ if (args._.length == 0 || args._[0] == "projects") {
             {
               type: "push",
               title: "View Deployments",
-              command: [root, "deployments", "--project", project.name],
+              command: [entrypoint, "deployments", "--project", project.name],
             },
           ],
         } as sunbeam.Listitem)
