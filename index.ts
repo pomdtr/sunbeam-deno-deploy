@@ -47,7 +47,11 @@ if (args._.length == 0 || args._[0] == "projects") {
         ({
           title: project.name,
           subtitle: project.type,
-          accessories: [formatDistanceToNow(new Date(project.updatedAt))],
+          accessories: [
+            formatDistanceToNow(new Date(project.updatedAt), {
+              addSuffix: true,
+            }),
+          ],
           // preview: {
           //   text: JSON.stringify(project, null, 2),
           //   highlight: "json",
