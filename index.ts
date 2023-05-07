@@ -41,17 +41,17 @@ if (args._.length == 0 || args._[0] == "projects") {
   const page: sunbeam.Page = {
     title: "Deno Deploy Projects",
     type: "list",
-    showPreview: true,
+    // showPreview: true,
     items: projects.map(
       (project: any) =>
         ({
           title: project.name,
           subtitle: project.type,
           accessories: [formatDistanceToNow(new Date(project.updatedAt))],
-          preview: {
-            text: JSON.stringify(project, null, 2),
-            highlight: "json",
-          },
+          // preview: {
+          //   text: JSON.stringify(project, null, 2),
+          //   highlight: "json",
+          // },
           actions: [
             {
               type: "open",
