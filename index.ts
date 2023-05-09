@@ -98,7 +98,11 @@ if (args._[0] == "deployments") {
       (deployment: any) =>
         ({
           title: deployment.domainMappings[0].domain,
-          accessories: [formatDistanceToNow(new Date(deployment.createdAt))],
+          accessories: [
+            formatDistanceToNow(new Date(deployment.createdAt), {
+              addSuffix: true,
+            }),
+          ],
           actions: [
             {
               type: "open",
