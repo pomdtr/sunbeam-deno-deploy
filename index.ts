@@ -65,14 +65,14 @@ if (args._.length == 0 || args._[0] == "projects") {
               target: `https://dash.deno.com/projects/${project.name}`,
             },
             {
-              type: "open",
-              title: "Open Latest Deployment",
-              target: `https://${project.productionDeployment.domainMappings[0].domain}`,
-            },
-            {
               type: "push",
               title: "View Deployments",
               command: [entrypoint, "deployments", "--project", project.name],
+            },
+            {
+              type: "open",
+              title: "Open Latest Deployment",
+              target: `https://${project.productionDeployment.domainMappings[0].domain}`,
             },
           ],
         } as sunbeam.Listitem)
