@@ -98,7 +98,7 @@ if (args._[0] == "deployments") {
       (deployment: any) =>
         ({
           title: deployment.domainMappings[0].domain,
-          subtitle: deployment.relatedCommit.message,
+          accessories: [formatDistanceToNow(new Date(deployment.createdAt))],
           actions: [
             {
               type: "open",
