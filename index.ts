@@ -67,7 +67,9 @@ if (args._.length == 0 || args._[0] == "projects") {
             {
               type: "push",
               title: "View Deployments",
-              command: [entrypoint, "deployments", "--project", project.name],
+              page: {
+                command: [entrypoint, "deployments", "--project", project.name],
+              },
             },
             {
               type: "open",
