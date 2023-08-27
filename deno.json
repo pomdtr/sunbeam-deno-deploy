@@ -1,0 +1,6 @@
+{
+    "imports": {
+        "date-fns": "npm:date-fns@2.30.0",
+        "streams/": "https://deno.land/std@0.200.0/streams/"
+    }
+}
